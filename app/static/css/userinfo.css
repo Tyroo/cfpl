@@ -1,0 +1,82 @@
+body
+{
+  padding:0;
+  margin:0;
+}
+
+#head{
+  
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  background: #ebebeb;
+}
+
+#head #navigation #logo{
+  float: left;
+}
+
+#head #navigation{ 
+  position: relative;
+  width: 1519px;
+  height: 55px;
+  margin:0 auto;
+}
+
+#head #navigation nav #theme{
+  display: block;
+  width: 150px;
+  height: 55px;
+  line-height: 55px;
+  margin: 0 auto;
+}
+
+#mid{
+  position: relative;
+  padding: 10px;
+  top: 55px;
+  width: 1509px;
+  height: 2500px;
+  margin: 0 auto;
+}
+
+#mid #user_data{
+  display: block;
+  width: 1509px;
+  height: 300px;
+  border: solid 1px #cc183d;
+}
+
+#mid #headimg{
+  float: left;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin: 50px 10px 30px 50px;
+  border-radius: 45px;
+  border:solid 3px #cc183d;
+  
+}
+
+#mid #username,#bbsnumber{
+  clear: left;
+  float: left;
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  line-height:30px;
+  text-align: left;
+  margin: 0 10px 10px 50px;
+  border: solid 1px #cc183d;
+  font-size: 25px;
+}
+
+#integral{
+  position: absolute;
+  left: 519px;
+  display:inline-block;
+  width: 500px;
+  height: 300px;
+  float: right;
+  border:solid 1px #cc183d;
+}

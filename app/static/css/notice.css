@@ -1,0 +1,419 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*********************导航栏***********************/
+.header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  /*text-align: center;*/
+  background: #ebebeb;
+  z-index: 6;
+}
+
+    /*背景*/
+.header .navigation{
+    display: grid;
+    display: -ms-grid;
+    justify-content: center;
+    align-items: center;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(25, 4%);
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ebebeb;
+    text-align: left;
+    box-shadow: 2px 2px 8px #999;
+}
+
+    /*网站LOGO*/
+.navigation .logo{
+    width: 100%;
+    height: 100%;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    place-self: stretch stretch;
+}
+
+
+.logo .logo_img{
+    background: url("/static/img/logo.bmp") no-repeat;
+    background-size: 100% 60%;
+    -moz-background-size: 100% 60%;
+    background-position: center;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+    /*导航条：首页、论坛公告、关于我们、帮助与反馈*/
+.navigation nav{
+    display: flex;
+    height: 100%;
+}
+
+.navigation nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    letter-spacing: -8px;
+    list-style: none;
+
+}
+
+.navigation nav ul li {
+    display: inline-block;
+    height: 100%;
+    letter-spacing: normal;
+}
+
+.navigation nav ul li {
+    width: 25%;
+}
+
+
+.header .navigation nav ul li label{
+    /*border: solid 1px black;*/
+    /*padding: 0 18px;*/
+    /*min-width: 6.75rem;*/
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 55px;
+}
+
+.navigation nav ul li label:hover{
+    background-color: #ddd;
+}
+
+/*.navigation nav ul li a {*/
+/*    display: inline-block;*/
+/*    text-align: center;*/
+/*    border-radius: 5px;*/
+/*    width: 100%;*/
+/*}*/
+
+.navigation nav ul li label {
+    width: 100%;
+    text-align: center;
+}
+
+.navigation nav ul li label span{
+    color: #2a2c2d;
+    font-family: "Arial Black";
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3.4375rem;
+}
+
+/*.navigation nav ul li a:link{*/
+/*    text-decoration: none;*/
+/*}*/
+
+.header .navigation nav ul input:checked + li label span{
+    border-bottom: solid 4px #cc183d;
+}
+
+.header .navigation nav ul input{
+    display: none;
+}
+
+
+        /*搜索框*/
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.header .navigation form input{
+    width: 60%;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50px;
+    border: solid 1.5px #cc183d;
+    min-width: 9.375rem;
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+    vertical-align: middle;
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+/*登陆注册栏*/
+/*.LoginOrSign{
+    background: url("/static/img/login.png");
+}*/
+
+.header .navigation .Login{
+    font-size: 100%;
+    font-family: '粗体';
+    font-weight: bold;
+    text-align: center;
+}
+
+.header .navigation .Login .LoginOrSign{
+    display: inline-block;
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    color: black;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    /*background-position: -0 -0;
+    background-size: 202% 100%;*/
+}
+
+.header .navigation #personal{
+    display: block;
+    position: relative;
+    width: 25px;
+    margin: 0 0 0 42px;
+    height: 18px;
+    padding: 0 2px;
+    border: solid 3px #AAA;
+    border-radius: 22px 22px 20px 20px;
+    border-width: 0.5px 0.5px 12px 0.5px;
+    font-size: 24px;
+    font-family: '粗体';
+    font-weight: bold;
+    color: #AAA;
+    line-height: 16px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.header .navigation #personal:hover{
+    background-color: white;
+    color: #cc183d;
+    border-color: #cc183d;
+}
+
+.header .navigation .LoginOrSign:hover{
+    background-color: #cc183d;
+    color: white;
+}
+
+.header .navigation .LoginOrSign:hover #login_info{
+    top: 60px;
+    z-index: 1;
+}
+
+.header .navigation .Login #login_info{
+    position: absolute;
+    top: -105px;
+    height: 160px;
+    width: 150px;
+    margin-left: -44px;
+    background: #ebebeb;
+    opacity: 0;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #555;
+    transition: all 0.5s;
+    z-index: -100;
+}
+
+.header .navigation .Login #login_info #symbol{
+    top: -16px;
+    left: 86px;
+    position: absolute;
+    color: #cc183d;
+    width: 30px;
+    height: 18px;
+    line-height: 18px;
+    overflow: hidden;
+}
+
+.header .navigation .Login #login_info #log_out{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 14px;
+    font-family: '粗体';
+    cursor: pointer;
+    color: #C0C0C0;
+    border-radius: 0 0 10px 10px;
+    background: #cc183d;
+}
+
+.header .navigation .Login #login_info #log_out:hover{
+    color: white;
+}
+
+.header .navigation .Login #login_info #log_out:active{
+    color: #C0C0C0;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  box-sizing:border-box;
+  background: #f0f0f0cc;
+}
+
+.notice {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 5% 90% 5%;
+  grid-rows: auto;
+  /*grid-template-rows: repeat(auto-fill, 8rem);*/
+  /*grid-gap: 5% 0;*/
+}
+
+.notice_term {
+  grid-column: 2 / 3;
+  width: 100%;
+  margin: 2.5% 0;
+  border: solid 1px #aaa;
+  border-left: solid 4px #cc183d;
+  box-shadow: 2px 2px 5px #ccc;
+  box-sizing: border-box;
+  self-place: center center;
+  border-radius: 0.8rem;
+  color: #888;
+  height: 2rem;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+.notice_title {
+  margin-left: 0.5rem;
+  line-height: 2rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.notice_content {
+  color: #888;
+  margin: 0.5rem;
+}
+
+.detail {
+  display: flex;
+  margin: 0.5rem;
+}
+
+.detail .detail_link {
+  flex: 1;
+}
+
+.detail .detail_link .link_btn {
+  text-decoration: underline;
+  color: Green;
+}
+
+.detail .detail_date {
+  width: 5rem;
+}
+
+
+/****************媒体查询-兼容手机端***************/
+/* Extra small devices (phones, 600px and down) */
+/* 屏幕尺寸小于600px*/
+@media only screen and (max-width: 600px) {
+    .main {top:120px}
+    .navigation .logo { grid-column: 2 / 7}
+    .navigation nav {grid-column-start: span 25}
+    form {
+        grid-row: 1 / 2;
+        grid-column: 10 / 17;
+    }
+    .header .navigation .Login { grid-column:  20 / 25;
+        grid-row: 1 / 2;
+    }
+    .header .navigation {
+        grid-template-rows: repeat(2,1fr);
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* 屏幕尺寸大于600px*/
+@media only screen and (min-width: 600px) {
+    .main {top:120px}
+    .navigation .logo { grid-column-start: 1;
+        grid-column-end: 6}
+    form {
+        grid-row: 1 / 2;
+        grid-column: 10 / 20;
+    }
+    .navigation nav {grid-column-start: span 25}
+    .header .navigation .Login { grid-column:  20 / 25;
+        grid-row: 1 / 2;
+    }
+    .header .navigation {
+        grid-template-rows: repeat(2,1fr);
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* 屏幕尺寸大于768px*/
+@media only screen and (min-width: 768px) {
+    .main {top:120px}
+    .navigation .logo { grid-column-start: 1;
+        grid-column-end: 6}
+    form {
+        grid-row: 1 / 2;
+        grid-column: 10 / 20;
+    }
+    .navigation nav {grid-column-start: span 25}
+    .header .navigation .Login { grid-column:  20 / 25;
+        grid-row: 1 / 2;
+    }
+    .header .navigation {
+        grid-template-rows: repeat(2,1fr);
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* 屏幕尺寸大于992px*/
+@media only screen and (min-width: 992px) {
+    .main {top: 55px}
+    .navigation .logo { grid-column: 1 / 4}
+    .navigation nav {grid-column: 7 / 15}
+    form { grid-column:  17 / 22;
+        grid-row: 1 / 2;
+    }
+    .header .navigation .Login{
+        grid-column-start: 23;
+        grid-column-end: 25;
+    }
+    .header .navigation {
+        grid-template-rows: 100%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* 屏幕尺寸大于1200px*/
+@media only screen and (min-width: 1200px) {
+    .main {top: 55px}
+    .navigation .logo { grid-column: 1 / 4}
+    .navigation nav {grid-column-start: span 8}
+    form { grid-column:  16 / 22;
+        grid-row: 1 / 2;
+    }
+    .header .navigation .Login{
+        grid-column-start: 24;
+        grid-column-end: 26;
+    }
+    .header .navigation {
+        grid-template-rows: 100%;
+    }
+}

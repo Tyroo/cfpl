@@ -1,0 +1,176 @@
+
+    /* 菜单 */
+        .menu {
+        display:inline-block;
+        /*overflow: hidden;*/
+        background-color: #ebebeb;
+        }
+
+    /* logo样式 */
+        .menu a {
+
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        }
+    /* 菜单栏样式 */
+        .menu_1_1 a {
+
+
+        left:180px;
+        text-align: center;
+        text-decoration: none;
+        padding: 17px 30px;
+        }
+    /* 登陆栏样式 */
+        /*.login a {
+
+        display:inline-block;
+        text-align: center;
+        text-decoration: none;
+        padding: 17px 30px;
+        }*/
+
+    /* 鼠标接触菜单后的颜色 */
+        .menu_1 a:hover {
+        background-color: #2a2c2b;
+        color: white;
+        }
+    /* 鼠标接触登录键后的颜色 */
+        .login a:hover {
+        background-color: #cc183d;
+        color: white;
+        }
+
+
+    /* 导航栏样式 */
+    .navigation_bar {
+        display: inline-block;
+        /*position: absolute;*/
+        top:0px;
+        height: 50px;
+        width: 100%;
+        background-color: #ebebeb;
+        margin: 0px;
+        left: 0px;
+    }
+    /* LOGO图标样式 */
+    .logo {
+        display: inline-block;
+        position: absolute;
+        left: 100px;
+        margin: 0px;
+    }
+    /* 导航项总体样式 */
+    .navigation {
+
+        display: inline-block;
+        left: 50%;
+        top: 14.9px;
+        margin: 0px;
+    }
+    /* 导航项各项样式 */
+    .navigation a {
+        color: #22a2c2b;
+        text-align: center;
+        text-decoration: none;
+        padding: 15px 15px;
+
+
+    }
+
+    .login {
+        display: inline-block;
+        position: absolute;
+        top: 14.9px;
+        margin: 0px;
+        right: 0px;
+    }
+
+    .login a {
+        text-align: center;
+        text-decoration: none;
+        padding: 15px 30px;
+    }
+
+    /* 鼠标接触导航项各项后的颜色 */
+        .navigation a:hover {
+        background-color: #2a2c2b;
+        color: white;
+        }
+    /* 鼠标接触登录键后的颜色 */
+        .login a:hover {
+        background-color: #cc183d;
+        color: white;
+        }
+
+
+
+#sideToggle{
+            display:none;
+                }
+
+#sideToggle:checked + aside{
+                            left:0;
+                            }
+
+#sideToggle:checked ~ #wrap{
+                            padding-left:200px;
+
+                            }
+
+
+/* 弹出侧边栏样式 */
+body > aside{
+              position:fixed;
+              float:left;
+              top:150px;
+              bottom:0;
+              left:-200px;
+              width:200px;
+              height:500px;
+              background:#cc183d;
+              transition:0.2s ease-out;
+              -webkit-transition:0.2s ease-out;
+              }
+body > aside > h2{
+                   color:#FFF;
+                   text-align:center;
+                   font-weight:normal;
+                   padding:10px;
+                  }
+
+#wrap {
+        position:fixed;
+        float:left;
+        left: 0;
+        margin-left:0;
+        top: 365px;
+        transition:0.2s ease-out;
+        -webkit-transition:0.2s ease-out;
+        }
+
+#wrap > label{
+                display:inline-block;
+                }
+
+#wrap > label{
+              float:left;
+              background:#dbdbdb;
+              border-radius:50px;
+              color: #cc183d;
+              cursor: pointer;
+              display: inline-block;
+              font-family: 黑体;
+              font-size: 30px;
+              font-weight: bold;
+              width: 25px;
+              height: 35px;
+              line-height: 34px;
+              text-align: center;
+
+            }
+#wrap > label:hover{
+
+                    color:#ff0000;
+                    }

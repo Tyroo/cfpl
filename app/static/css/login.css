@@ -1,0 +1,273 @@
+body{
+    background: url("../img/hailang.jpg");
+}
+
+/*登录框样式*/
+.Login-Sign{
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    width: 1000px;
+    border-radius: 200px;
+    border: solid 2px #cc183d;
+    margin: 150px auto 50px auto;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    background-color: rgba(0,0,0,0.4);
+
+}
+
+.Login{
+    display: block;
+    position: absolute;
+    height: 400px;
+    width: 700px;
+    border-radius: 200px;
+    /*background-color: rgba(255,255,255,0.15);*/
+    /*text-align: center;*/
+    left: 150px;
+    transition: transform 1.5s;
+    z-index: 1;
+}
+
+.Login .frame p{
+    display: block;
+    text-align: center;
+    font-family: '粗体';
+    font-weight: bold;
+    font-size: 30px;
+    margin: 30px auto 40px auto;
+    color: white;
+}
+
+.Login .frame div{
+    height: 34px;
+    width: 700px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+.Login .frame div a{
+    display: inline-block;
+    width: 150px;
+    height: 32px;
+    margin-left: 10px;
+    margin-top: -5px;
+    line-height: 34px;
+    vertical-align: middle;
+    color: #cc183d;
+}
+
+
+.Login .frame div input{
+    display: inline-block;
+    width: 300px;
+    height: 30px;
+    margin-left: 198px;
+    background-color: rgba(255,255,255,0);
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+    outline: none;
+    box-shadow: none;
+    border-style: solid;
+    border-color: #cc183d;
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+
+}
+.Login .Btn{
+    text-align: center;
+}
+
+
+
+.Login-Sign #LoginRadio2:checked~#Sign{
+    transform: translateX(-850px);
+}
+
+.Login-Sign #LoginRadio2:checked~#Login{
+    transform: translateX(-850px);
+}
+
+.Login .frame input::-webkit-input-placeholder{
+    color: black;
+}
+
+
+.Login .Btn a label{
+    display: inline-block;
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #cc183d;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.Login .Btn a label:active{
+    border: solid 1px white;
+}
+
+
+
+.Login-Sign input{
+    display: none;
+}
+.find{
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    margin-left: 310px;
+    margin-top: 30px;
+}
+
+.find .FindPassword{
+    color: #2a2c2d;
+    text-align:center;
+}
+.find .FindPassword:hover{
+    color: white;
+    border-bottom: solid 1px white;
+}
+
+  /*注册框样式*/
+
+.Sign{
+    display: block;
+    position: absolute;
+    height: 400px;
+    width: 700px;
+    border-radius: 200px;
+    /*background-color: rgba(255,255,255,0.15);*/
+    /*text-align: center;*/
+    left: 1000px;
+    /*transform: rotateY(360deg);*/
+    transition: transform 1.5s;
+    z-index: 1;
+}
+
+.Sign .frame p{
+    text-align: center;
+    margin:5px auto 0 auto;
+    font-family: '粗体';
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.Sign .frame div{
+    height: 34px;
+    width: 700px;
+    margin:10px 0;
+    vertical-align: middle;
+}
+
+.Sign .frame div a{
+    display: inline-block;
+    width: 120px;
+    height: 32px;
+    vertical-align: middle;
+    margin: 1px 0 1px 5px;
+    text-align: left;
+    line-height: 30px;
+    color: #cc183d;
+}
+
+
+
+.Sign .frame div input{
+    display: inline-block;
+    width: 220px;
+    height: 30px;
+    margin-left: 188px;
+    background-color: rgba(255,255,255,0);
+    line-height: 30px;
+    font-size: 20px;
+    color: white;
+    border-radius: 15px;
+    outline: none;
+    box-shadow: none;
+    border-style: solid;
+    border-color: #cc183d;
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+
+}
+
+.Sign .frame div input:not(#ls_input5){
+    width: 320px;
+}
+
+
+.Sign .frame input::-webkit-input-placeholder{
+    color: black;
+}
+
+.Sign .frame #send_auth{
+
+    width: 50px;
+    height: 30px;
+    border-radius: 15px;
+    background: #cc183d;
+    font-size: 16px;
+    font-family: Arial;
+    line-height: 30px;
+    color: white;
+    outline: none;
+    border: solid 1px #cc183d;
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+}
+
+.Sign .frame #send_auth:active{
+    border: solid 1px white;
+}
+
+
+.Sign .Btn{
+    text-align: center;
+}
+
+.Sign .Btn a label{
+    display: inline-block;
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #cc183d;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+}
+
+
+.Sign .Btn a label:active{
+    border: solid 1px white;
+}
+
+.Loading{
+    height:30px;
+    text-align: center;
+}
+
+.Loading span{
+    display:inline-block;
+    width: 30px;
+    height: 30px;
+    color:rgba(0,0,0,0.5);
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    font-size:45px;
+    user-select: none;
+}
