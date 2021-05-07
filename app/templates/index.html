@@ -1,0 +1,106 @@
+{% extends "./base_one.html" %}
+
+{% block title %}
+    <title>CFPL社区 l 首页</title>
+{% endblock %}
+
+{% block style %}
+{#    <link rel="stylesheet" type="text/css" href="/static/css/main.css">#}
+{#    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">#}
+{% endblock %}
+
+{% block main %}
+    <div class="mid" style="position:relative;overflow:auto;height: auto;width: 100%;box-sizing:border-box;background: #f0f0f0cc">
+            <!-- 轮播图 -->
+            <div class="Slideshow">
+                <div class="Img_list">
+                    <ul>
+                        <li class="ImgLi1"><img src="/static/img/slideshow1.jpg" alt="风景1"></li>
+                        <li	class="ImgLi2"><img src="/static/img/slideshow2.jpg" alt="风景2"></li>
+                        <li	class="ImgLi3"><img src="/static/img/slideshow3.jpg" alt="风景3"></li>
+                        <li	class="ImgLi4"><img src="/static/img/slideshow4.jpg" alt="风景4"></li>
+                        <li	class="ImgLi5"><img src="/static/img/slideshow5.jpg" alt="风景5"></li>
+                    </ul>
+                </div>
+                <div class="line">
+                    <span class="line_span1"></span>
+                    <span class="line_span2"></span>
+                    <span class="line_span3"></span>
+                    <span class="line_span4"></span>
+                    <span class="line_span5"></span>
+                </div>
+                <div class="left_btn switch_btn"><span>＜</span></div>
+                <div class="right_btn switch_btn"><span>＞</span></div>
+            </div>
+            <!-- 侧边栏  -->
+            <input type="checkbox" name="Checkbox" id="SideCheckbox">
+            <aside>
+                <h2 style="margin-top: 5px;position: absolute;top: 0;width: 220px;">专注栏</h2>
+                <div class="hauti" style="position: absolute; top: 30px;">
+                    <h3>话题分类</h3>
+                    <div class="fenlei" style="width: 220px;">
+                        <a>学习</a>
+                        <a>闲聊</a>
+                        <a>其他</a>
+                    </div>
+                </div>
+                <button><a href="/editor/?change=0" style="position: absolute;top: 80px;">发表文章</a></button>
+            </aside>
+            <div id="SideButton">
+                <label id="SideLabel" for="SideCheckbox"><span>></span></label>
+    <!--					<img src="/static/img/side_right.ico" alt="">-->
+            </div>
+
+            <!--  内容与板块区域  -->
+
+
+        <div class="SpecialContent">
+            <!--热门TOP-->
+            <div class="HotPost">
+                <h1 class="SpecialTitleLeft">热门TOP</h1>
+                <div class="BottomLine"></div>
+                <div class="PostList">
+                    <ul>
+                        <li><h2 style="color: red;">♛</h2><a href="#">热门帖子1------------------------------■</a></li>
+                        <li><h2 style="color: orange;">♛</h2><a href="#">热门帖子2------------------------------■</a></li>
+                        <li><h2 style="color: royalblue;">♛</h2><a href="#">热门帖子3------------------------------■</a></li>
+                        <li><a href="#">热门帖子4------------------------------■</a></li>
+                        <li><a href="#">热门帖子5------------------------------■</a></li>
+                        <li><a href="#">热门帖子6------------------------------■</a></li>
+                        <li><a href="#">热门帖子7------------------------------■</a></li>
+                        <li><a href="#">热门帖子8------------------------------■</a></li>
+                        <li><a href="#">热门帖子9------------------------------■</a></li>
+                        <li><a href="#">热门帖子10-----------------------------■</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--板块-->
+            <div class="Plate">
+                <h1 class="SpecialTitleRight">版块</h1>
+                <div class="BottomLine"></div>
+                <div class="PlateList">
+                    <div class="gambit">
+                        <a href="/index/special/?section=1" target="_blank">话题</a>
+                    </div>
+                    <div class="events">
+                        <a href="/index/special/?section=2" target="_blank">活动</a>
+                    </div>
+                    <div class="wall">
+                        <a href="/index/special/?section=3" target="_blank">校园墙</a>
+                    </div>
+                    <div class="competition">
+                        <a href="/index/special/?section=4" target="_blank">比赛</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+		<!-- 网站底部 -->
+{% block footer %}
+    <h2>footer</h2>
+{% endblock %}
+
+{% block script %}
+    <script src="/static/js/index.js" type="module"></script>
+{% endblock %}

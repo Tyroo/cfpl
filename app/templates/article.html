@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"  charset="utf-8" content="width=device-width,initial-scale=1.0">
+    <title>{{title}}-{{username}} l CFPL文章</title>
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <link href="/static/css/article.css" type="text/css" rel="stylesheet">
+    <link href="/static/css/prism.css" type="text/css" rel="stylesheet">
+    <script src="/static/js/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="/static/js/set_tinymce-comment.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.4.1.js"></script>
+    <script src="/static/js/domlastic.js" type="text/javascript"></script>
+</head>
+<body style="background: url('../static/img/article_bg4.jpg');transition:1s;">
+
+<!--网站头部-->
+<!--导航栏-->
+<!--<div id="head" data-browse_username="{{browse_username}}">-->
+<!--    <div id="head1">-->
+<!--        <div class="logo">-->
+<!--            <a class="logo_img" href="/index/" title="乘风破浪社区"></a>-->
+<!--        </div>-->
+<!--        <a class="theme">文章阅读</a>-->
+<!--        <button type="button" id="change_bg" title="更换背景">©</button>-->
+<!--    </div>-->
+<!--</div>-->
+
+		<!-- 网站头部 -->
+<header class="header" data-browse_username="{{browse_username}}">
+    <div class="navigation">
+        <!-- LOGO -->
+        <div class="logo">
+            <a  class="logo_img" href="/index" title="乘风破浪社区"></a>
+        </div>
+
+        <!-- 导航条 -->
+        <nav>
+            <ul>
+                <input class="nav_radio" type="radio" name="navbutton" id="RadioButton1" checked>
+                <li ><a href="#"><label for="RadioButton1"><p>话题</p></label></a></li>
+                <input class="nav_radio" type="radio" name="navbutton" id="RadioButton2">
+                <li ><a href="#"><label for="RadioButton2"><p>活动</p></label></a></li>
+                <input class="nav_radio" type="radio" name="navbutton" id="RadioButton3">
+                <li ><a href="#"><label for="RadioButton3"><p>校园墙</p></label></a></li>
+                <input class="nav_radio" type="radio" name="navbutton" id="RadioButton4">
+                <li ><a href="#"><label for="RadioButton4"><p>比赛</p></label></a></li>
+            </ul>
+        </nav>
+        <!--  搜索框  -->
+
+        <form>
+            <input type="search" name="SearchBus" placeholder="帖子、板块、用户">
+<!--				<button type="submit" name="SearchButton"></button>-->
+            <input type="button" id="change_bg" title="更换背景" value="©">
+        </form>
+        <!--  登录 /注册 -->
+        {% if SessionFlag == True %}
+            <div class="Login">
+                <a href="/index/personal/" id="personal" target="_blank" title="个人中心">●</a>
+                <div id="login_info">
+                    <p id="symbol">▲</p>
+                    <p id="log_out">退出登录</p>
+                </div>
+            </div>
+        {% else %}
+            <div class="Login"><a class="LoginOrSign" href="/index/login-sign/">登录</a></div>
+        {% endif %}
+        <div class="menu_icon">
+            <button class="menu_button"></button>
+        </div>
+
+    </div>
+</header>
+
+<!--下拉菜单栏(移动端)-->
+<nav class="menu_box">
+  <div class="menu_term" style="z-index:1">
+    <h3 class="menu_title"><span>话题</span></h3>
+    <div class="menu_child_box">
+      <div><a>学习</a></div>
+      <div><a>闲聊</a></div>
+      <div><a>其它</a></div>
+      <div><a>学习</a></div>
+      <div><a>闲聊</a></div>
+      <div><a>其它</a></div>
+      <div><a>学习</a></div>
+      <div><a>闲聊</a></div>
+      <div><a>其它</a></div>
+      <div><a>学习</a></div>
+      <div><a>闲聊</a></div>
+      <div><a>其它</a></div>
+      <div><a>学习</a></div>
+      <div><a>闲聊</a></div>
+      <div><a>其它</a></div>
+    </div>
+  </div>
+  <div class="menu_term" style="z-index:2">
+        <h3 class="menu_title"><span>活动</span></h3>
+        <div class="menu_child_box">
+            <div><a>学习</a></div>
+            <div><a>闲聊</a></div>
+            <div><a>其它</a></div>
+        </div>
+    </div>
+  <div class="menu_term" style="z-index:3">
+        <h3 class="menu_title"><span>校园墙</span></h3>
+        <div class="menu_child_box">
+            <div><a>学习</a></div>
+            <div><a>闲聊</a></div>
+            <div><a>其它</a></div>
+        </div>
+    </div>
+  <div class="menu_term" style="z-index:4">
+        <h3 class="menu_title"><span>比赛</span></h3>
+        <div class="menu_child_box">
+            <div><a>学习</a></div>
+            <div><a>闲聊</a></div>
+            <div><a>其它</a></div>
+        </div>
+    </div>
+</nav>
+<!--网站中部-->
+<div id="mid_content">
+    <!--左侧栏-->
+<!--    <div id="left_column" style="display: none">-->
+<!--        &lt;!&ndash;用户信息区&ndash;&gt;-->
+<!--        <div class="userinfo_box">-->
+<!--            <p style="text-align:center;border-bottom:solid 2px #cc183d;font-size: 22px;font-family:'粗体';font-weight: bold;">作者</p>-->
+<!--            &lt;!&ndash;头像&ndash;&gt;-->
+<!--            <a href="#"><img src="/static/img/head_portrait.gif"></a>-->
+<!--            <a href="#" id="username"><span>{{username}}</span></a>-->
+<!--            <div class="data_info">-->
+<!--                <dl>-->
+<!--                    <dt>99</dt>-->
+<!--                    <dd><a href="#">文章</a></dd>-->
+<!--                </dl>-->
+<!--                <dl>-->
+<!--                    <dt>99</dt>-->
+<!--                    <dd><a href="#">粉丝</a></dd>-->
+<!--                </dl>-->
+<!--                <dl>-->
+<!--                    <dt>99</dt>-->
+<!--                    <dd><a href="#">获赞</a></dd>-->
+<!--                </dl>-->
+<!--                <dl>-->
+<!--                    <dt>99</dt>-->
+<!--                    <dd><a href="#">评论</a></dd>-->
+<!--                </dl>-->
+<!--            </div>-->
+<!--            <div class="data_info">-->
+<!--                <dl>-->
+<!--                    <dt>99</dt>-->
+<!--                    <dd><a href="#">积分</a></dd>-->
+<!--                </dl>-->
+<!--                <dl>-->
+<!--                    <dt>99</dt>-->
+<!--                    <dd><a href="#">收藏</a></dd>-->
+<!--                </dl>-->
+<!--                <dl>-->
+<!--                    <dt>99</dt>-->
+<!--                    <dd><a href="#">访问</a></dd>-->
+<!--                </dl>-->
+<!--                <dl>-->
+<!--                    <dt>99</dt>-->
+<!--                    <dd><a href="#">等级</a></dd>-->
+<!--                </dl>-->
+<!--            </div>-->
+<!--            <button>私信</button>-->
+<!--            <button>关注</button>-->
+<!--        </div>-->
+<!--            &lt;!&ndash;目录区&ndash;&gt;-->
+<!--        <hr style="height:10px;width:250px;background:rgba(0,0,0,0.1);border:none;">-->
+<!--        <div class="catalog_box">-->
+<!--            <p style="text-align:center;border-bottom:solid 2px #cc183d;font-size: 22px;font-family: '粗体';font-weight: bold;">目录</p>-->
+<!--        </div>-->
+<!--    </div>-->
+    <!--文章板块-->
+    <main id="main_content">
+        <!--文章标题区-->
+        <div class="article_title" style="width:100%;margin:5px auto;">
+            <h1 title={{title}} style="font-size:2rem;height:2.5rem;line-height:2.5rem;margin:0;border-left:solid 4px #cc183d;padding-left:20px;border-radius:20px 0 0 20px;overflow:hidden;text-overflow: ellipsis;">{{title}}</h1>
+        </div>
+        <!--文章信息区-->
+        <div class="article_message" style="display:inline-block;float:right;border:solid 1px #cc183d;border-radius:10px;user-select:none;margin:5px 10px;padding: 0 10px;">
+            <img src="/static/img/issue_time.png" style="width:15px;height:15px;margin-top:-5px;vertical-align: middle;">
+            <!--<span class="issue_time" style="">{{issuetime|date:'Y-m-d H:i:s'}}</span>-->
+            <span class="issue_time" style="">{{issuetime|date:'Y-m-d'}}</span>
+            <img src="/static/img/articleread.png" style="width:18px;height:22px;margin-left:10px;margin-top:-5px;vertical-align: middle;">
+            <span style="">{{praise}}</span>
+            <img src="/static/img/collect.png" style="width:16px;height:16px;margin-left:10px;margin-top:-5px;vertical-align: middle;">
+            <span style="">{{collect}}</span>
+        </div>
+        <hr style="height:10px;background:rgba(0,0,0,0.12);width: 100%;border:none;">
+        <!--文章内容区-->
+        <!--给下面的这个div添加“line-numbers“类属性，使得prism插件能找到需显示行号的块，并在它下面的pre标签显示行号-->
+
+        <div class="line-numbers" id="article_content">
+            <article id="content">
+                {{article_content|safe}}
+            </article>
+        </div>
+
+
+
+    </main>
+    <!--评论板块-->
+    <div id="comment">
+        <div id="comment_content"></div>
+        <div id="wait_reply" title="待回复对象列表"></div>
+        <div id="comment_editor">
+            <div id="tinymce_comment"></div>
+        </div>
+
+        <button id="publish_comment" style="float:right;height:30px;width:80px;line-height:30px;border: 0;background: #cc183d;color: white;outline:none;border-radius: 0 0 10px 10px;">发表评论</button>
+
+	</div>
+</div>
+<!--    <button type="button" id="unfold_button" onclick="unfold_packup('unfold')" style="position:absolute;right: 5px;top: 60px;">展开更多内容</button>-->
+<!--    <button type="button" id="packup_button" onclick="unfold_packup('packup')" style="position:absolute;right: 100px;top: 60px;">收起内容</button>-->
+
+</div>
+<script src="/static/js/prism.js"></script>
+<script src="/static/js/article.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"  charset="utf-8" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    {% block title %}
+    {% endblock %}
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+        {% include "./component/header_top.html" %}
+    {% endblock %}
+
+    {% block main %}
+        <h2>base_to main</h2>
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+
+    {% block script %}
+    {% endblock %}
+</body>
+</html>

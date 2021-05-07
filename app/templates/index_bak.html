@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="viewport"  charset="utf-8" content="width=device-width,initial-scale=1.0">
+		<title>CFPL社区 l 首页</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+		<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+	</head>
+	<body>
+		<!-- 网站头部 -->
+		<header class="header">
+			<div class="navigation">
+				<!-- LOGO -->
+				<div class="logo">
+					<a class="logo_img" href="/index" title="乘风破浪社区"></a>
+				</div>
+
+				<!-- 导航条 -->
+				<nav>
+					<ul>
+						<input class="nav_radio" type="radio" name="navbutton" id="RadioButton1" checked>
+						<li><a><label onclick="window.location = '/index'" for="RadioButton1"><span>首页</span></label></a></li>
+						<input class="nav_radio" type="radio" name="navbutton" id="RadioButton2">
+						<li><a><label onclick="window.location = '/notice'" for="RadioButton2"><span>公告</span></label></a></li>
+						<input class="nav_radio" type="radio" name="navbutton" id="RadioButton3">
+						<li><a href="#"><label for="RadioButton3"><span>关于</span></label></a></li>
+						<input class="nav_radio" type="radio" name="navbutton" id="RadioButton4">
+						<li><a href="#"><label for="RadioButton4"><span>更多</span></label></a></li>
+					</ul>
+				</nav>
+				<!--  搜索框  -->
+
+				<form>
+					<input type="search" name="SearchBus" placeholder="帖子、板块、用户">
+<!--				<button type="submit" name="SearchButton"></button>-->
+				</form>
+				<!--  登录 /注册 -->
+				{% if SessionFlag == True %}
+					<div class="Login">
+						<a href="/index/personal/" id="personal" target="_blank" title="个人中心">●</a>
+						<div id="login_info">
+							<p id="symbol">▲</p>
+							<p id="log_out">退出登录</p>
+						</div>
+					</div>
+				{% else %}
+					<div class="Login"><a class="LoginOrSign" href="login-sign/">登录/注册</a></div>
+				{% endif %}
+
+			</div>
+
+		</header>
+		<!-- 网站中部 -->
+		<div class="mid" style="position:relative;overflow:auto;height: auto;width: 100%;box-sizing:border-box;background: #f0f0f0cc">
+				<!-- 轮播图 -->
+				<div class="Slideshow">
+					<div class="Img_list">
+						<ul>
+							<li class="ImgLi1"><img src="/static/img/slideshow1.jpg" alt="风景1"></li>
+							<li	class="ImgLi2"><img src="/static/img/slideshow2.jpg" alt="风景2"></li>
+							<li	class="ImgLi3"><img src="/static/img/slideshow3.jpg" alt="风景3"></li>
+							<li	class="ImgLi4"><img src="/static/img/slideshow4.jpg" alt="风景4"></li>
+							<li	class="ImgLi5"><img src="/static/img/slideshow5.jpg" alt="风景5"></li>
+						</ul>
+					</div>
+					<div class="line">
+						<span class="line_span1"></span>
+						<span class="line_span2"></span>
+						<span class="line_span3"></span>
+						<span class="line_span4"></span>
+						<span class="line_span5"></span>
+					</div>
+					<div class="left_btn switch_btn"><span>＜</span></div>
+					<div class="right_btn switch_btn"><span>＞</span></div>
+				</div>
+				<!-- 侧边栏  -->
+				<input type="checkbox" name="Checkbox" id="SideCheckbox">
+				<aside>
+					<h2 style="margin-top: 5px;position: absolute;top: 0;width: 220px;">专注栏</h2>
+					<div class="hauti" style="position: absolute; top: 30px;">
+						<h3>话题分类</h3>
+						<div class="fenlei" style="width: 220px;">
+							<a>学习</a>
+							<a>闲聊</a>
+							<a>其他</a>
+						</div>
+					</div>
+					<button><a href="/editor/?change=0" style="position: absolute;top: 80px;">发表文章</a></button>
+				</aside>
+				<div id="SideButton">
+					<label id="SideLabel" for="SideCheckbox"><span>></span></label>
+<!--					<img src="/static/img/side_right.ico" alt="">-->
+				</div>
+
+				<!--  内容与板块区域  -->
+
+
+			<div class="SpecialContent">
+				<!--热门TOP-->
+				<div class="HotPost">
+					<h1 class="SpecialTitleLeft">热门TOP</h1>
+					<div class="BottomLine"></div>
+					<div class="PostList">
+						<ul>
+							<li><h2 style="color: red;">♛</h2><a href="#">热门帖子1------------------------------■</a></li>
+							<li><h2 style="color: orange;">♛</h2><a href="#">热门帖子2------------------------------■</a></li>
+							<li><h2 style="color: royalblue;">♛</h2><a href="#">热门帖子3------------------------------■</a></li>
+							<li><a href="#">热门帖子4------------------------------■</a></li>
+							<li><a href="#">热门帖子5------------------------------■</a></li>
+							<li><a href="#">热门帖子6------------------------------■</a></li>
+							<li><a href="#">热门帖子7------------------------------■</a></li>
+							<li><a href="#">热门帖子8------------------------------■</a></li>
+							<li><a href="#">热门帖子9------------------------------■</a></li>
+							<li><a href="#">热门帖子10-----------------------------■</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--板块-->
+				<div class="Plate">
+					<h1 class="SpecialTitleRight">版块</h1>
+					<div class="BottomLine"></div>
+					<div class="PlateList">
+						<div class="gambit">
+							<a href="/index/special/?section=1" target="_blank">话题</a>
+						</div>
+						<div class="events">
+							<a href="/index/special/?section=2" target="_blank">活动</a>
+						</div>
+						<div class="wall">
+							<a href="/index/special/?section=3" target="_blank">校园墙</a>
+						</div>
+						<div class="competition">
+							<a href="/index/special/?section=4" target="_blank">比赛</a>
+						</div>
+					</div>
+				</div>
+<!--				-->
+<!--				-->
+<!--				<h2>The navigation bar will stay at the top of the page while scrolling</h2>-->
+
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+<!--				<p>Some text some text some text some text..</p>-->
+			</div>
+		</div>
+		<!-- 网站底部 -->
+
+		<script src="/static/js/index.js" type="module"></script>
+	</body>
+
+</html>

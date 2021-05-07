@@ -1,0 +1,5 @@
+include LICENSE
+include README.md
+include db.sqlite3
+include requirements.txt
+global-exclude *.pyc

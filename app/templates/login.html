@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>登录/注册</title>
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+    <script src="/static/js/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+    <div class="Login-Sign">
+        <input type="radio" name="LoginRadio" id="LoginRadio1" checked>
+        <input type="radio" name="LoginRadio" id="LoginRadio2">
+        <div class="Login" id="Login">
+            <form>
+                <div class="frame">
+                    <p>登录</p>
+                    <div><input id="ls_input1" type="text" name="UserName" class="UserName" placeholder="用户名/论坛号"><a id="login_user_error"></a></div>
+                    <div><input id="ls_input2" type="password" name="UserPassword" class="UserPassword" placeholder="密码"><a id="login_password_error"></a></div>
+                </div>
+                <div class="Btn">
+                    <a href="#"><label id="login_submit">登录</label></a>
+                    <a href="#"><label for="LoginRadio2" id="sign_btn">注册</label></a>
+<!--                    {% if LoginFlag == True %}-->
+<!--                        <p style="color:red;">账号或密码错误！</p>-->
+<!--                    {% endif %}-->
+                </div>
+                <div class="find">
+                    <a class="FindPassword" href="#">忘记密码?</a>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="Sign" id="Sign">
+            <form>
+<!--                {% csrf_token %}-->
+                <div class="frame">
+                    <p>注册</p>
+                    <div><input id="ls_input3" type="text" name="SignName" class="SignName" placeholder="姓名"></div>
+                    <div><input id="ls_input4" type="text" name="SignStudentNumber" class="SignStudentNumber" placeholder="学号"></div>
+                    <div><input id="ls_input5" type="text" name="SignEmail" class="SignEmail" placeholder="邮箱">
+                        <input id="ls_input6" class="AuthCode" type="text" placeholder="验证码" style="width: 90px; margin-left: 0;">
+                        <button id="send_auth" type="button">发送</button>
+                        <a id="mail_error"></a>
+                    </div>
+
+                    <div><input id="ls_input7" type="text" name="SignUserName" class="SignUserName" placeholder="用户名"><a id="username_error"></a></div>
+<!--                    <input type="submit" id="SignUserNameSubmit" style="display:none;">-->
+
+
+                    <div><input id="ls_input8" type="password" name="SignPassword" class="SignPassword" placeholder="密码"><a id="password_erro"></a></div>
+                    <div><input id="ls_input9" type="password" name="SignAffirmPassword" class="SignAffirmPassword" placeholder="确认密码"><a id="apassword_error"></a></div>
+
+                </div>
+                <div class="Btn">
+
+                    <a href="#"><label for="LoginRadio1" id="returnlogin_btn">返回登录</label></a>
+                    <a href="#"><label id="sign_submit">确认注册</label></a>
+                </div>
+
+            </form>
+        </div>
+        <script src="/static/js/base64.js"></script>
+        <script src="/static/js/loginsign.js"></script>
+    </div>
+    <div class="Loading">
+        <span class="load_li1">●</span>
+        <span class="load_li2">●</span>
+        <span class="load_li3">●</span>
+        <span class="load_li4">●</span>
+        <span class="load_li5">●</span>
+        <span class="load_li6">●</span>
+        <span class="load_li7">●</span>
+        <span class="load_li8">●</span>
+        <span class="load_li9">●</span>
+    </div>
+
+
+</body>
+</html>

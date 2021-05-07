@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8">
+	<title>CFPL社区 l 个人中心</title>
+	<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <link href="/static/css/personal.css" rel="stylesheet">
+	<script type="text/javascript" src="/static/js/jquery-3.4.1.js"></script>
+	<script src="/static/js/domlastic.js" type="text/javascript"></script>
+  </head>
+  <body>
+	<!--网站头部-->
+	<!--导航栏-->
+	<div id="head">
+		<div id="head1">
+			<div class="logo">
+				<a class="logo_img" href="/index/" title="乘风破浪社区"></a>
+			</div>
+			<a class="theme"><span>个人中心</span></a>
+		</div>
+	</div>
+    <!--网站中部-->
+    <div id="mid">
+	  <!--用户信息区-->
+	  <div id="user_data">
+		<img id="headimg" src="/static/img/headimg.jpg">
+		<span id="username" title="{{SessionUserName}}">{{SessionUserName}}</span>
+		
+		<span id="bbsnumber">论坛号：{{liu.UserBbsn}}</span>
+		<button type="button" id="copy_number" onclick="BbsnumberCopy()">复制</button>
+		<span id="identity">男，21岁，湖北省-孝感市，航龄：94年。哇哇哇哇哇哇哇哇哇哇哇</span>
+		<button type="button" id="change_data">编辑资料</button>
+
+		<div id="hierarchy">
+		  <div id="ought_integral">
+			<h5 id="grade">52/100</h5>
+			<span id="practical_integral"></span>
+		  </div>
+		  <table class="Grade_Tab" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="TabKey" title="Lv106">等级：</td>
+				<td class="TabValue">♚✸☾★★★</td>
+				<td class="TabKey" title="190000">积分：</td>
+				<td class="TabValue">19000</td>
+				<td class="TabKey" title="160000000000.5 KM">里程：</td>
+				<td class="TabValue">1600000000.5 km</td>
+			</tr>
+		  </table>
+
+
+<!--		  <p id="rank">-->
+<!--			<span class="FontKey">等级：</span>-->
+<!--		    <span id="rank_ico">♚✿☪★</span>-->
+<!--		  </p>-->
+<!--		  <p id="integral">-->
+<!--			<span class="FontKey" style="border:solid 1px #cc183d;" style="">积分：</span>-->
+<!--		    <span class="FontValue">1900000</span>-->
+<!--		  </p>-->
+<!--		  <p id="mileage">-->
+<!--			<span class="FontKey">里程：</span>-->
+<!--		    <span class="FontValue">15.6km</span>-->
+<!--		  </p>-->
+		</div>
+		<div id="dynamic">
+			<div class="data_info">
+				<dl>
+				  <dt>99</dt>
+				  <dd><a href="#">文章</a></dd>
+				</dl>
+				<dl>
+				  <dt>99</dt>
+				  <dd><a href="#">粉丝</a></dd>
+				</dl>
+				
+			    <dl>
+				  <dt>99</dt>
+				  <dd><a href="#">收藏</a></dd>
+			    </dl>
+			</div>
+			<div class="data_info">
+				<!--<dl>
+					<dt>99</dt>
+					<dd><a href="#">积分</a></dd>
+				</dl>-->
+			    <dl>
+				  <dt>99+</dt>
+				  <dd><a href="#">获赞</a></dd>
+			    </dl>
+			    <dl>
+				  <dt>99</dt>
+				  <dd><a href="#">评论</a></dd>
+			    </dl>
+				<dl>
+				  <dt>99</dt>
+				  <dd><a href="#">访问</a></dd>
+				</dl>
+				<!--<dl>
+					<dt>99</dt>
+					<dd><a href="#">等级</a></dd>
+				</dl>-->
+			</div>
+			<div id="btn">
+			  <button>私信</button>
+			  <button>关注</button>
+			</div>
+	    </div>
+	  </div>
+
+	  <div id="dynamic_nav">
+        <ul>
+            <input type="radio" id="article_head_radio1" name="article_head_radio" onclick="RadioEvent('class',this)" value="1" style="display: none">
+            <li><label for="article_head_radio1"><a>收藏</a></label></li>
+            <input type="radio" id="article_head_radio2" name="article_head_radio" onclick="RadioEvent('class',this)" value="2" style="display: none">
+            <li><label for="article_head_radio2"><a>文章</a></label></li>
+            <input type="radio" id="article_head_radio3" name="article_head_radio" onclick="RadioEvent('class',this)" value="3" style="display: none">
+            <li><label for="article_head_radio3"><a>评论</a></label></li>
+            <input type="radio" id="article_head_radio4" name="article_head_radio" onclick="RadioEvent('class',this)" value="4" style="display: none">
+            <li><label for="article_head_radio4"><a>关注</a></label></li>
+			<input type="radio" id="article_head_radio5" name="article_head_radio" onclick="RadioEvent('class',this)" value="5" style="display: none">
+            <li><label for="article_head_radio5"><a>粉丝</a></label></li>
+        </ul>
+	  </div>
+
+	  <div id="dynamic_list">
+		<ul>
+				{% for li in lis%}
+					<li class="article_li">
+					   <img src="/static/img/title.ico">
+					   <a href="/article/?ID={{li.Index}}" target="_blank" class="Article_Span_Title" title={{li.Title}} style="color: #333">{{li.Title}}</a>
+					   <img src="/static/img/user.ico">
+					   <a class="Article_Span_User">{{li.UserName}}</a>
+					   <img src="/static/img/issue_time.png">
+					   <a class="Article_Span_Time">{{li.IssueTime|date:'Y-m-d H:i:s'}}</a>
+					   <img src="/static/img/articleread.png">
+					   <a class="Article_Span_Popularity">{{li.Popularity}}</a>
+					   <button class="Edit_Button" value="{{li.Index}}" onclick="ArticleSetting(this,'editor')">编辑</button>
+					   <button class="Delete_Button" value="{{li.Index}}" onclick="ArticleSetting(this,'delete')">删除</button>
+					   <button class="Lock_Button" value="{{li.Index}}" onclick="ArticleSetting(this,'addlock')">加锁</button>
+					</li>
+				{% endfor %}
+		</ul>
+ 	  </div>
+	</div>
+  <script src="/static/js/personal.js" type="text/javascript"></script>
+
+  </body>
+</html>		

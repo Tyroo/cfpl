@@ -1,0 +1,47 @@
+<body>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+    <!-- 网站头部 -->
+    <header class="header">
+        <div class="navigation">
+            <!-- LOGO -->
+            <div class="logo">
+                <a class="logo_img" href="/index" title="乘风破浪社区"></a>
+            </div>
+
+            <!-- 导航条 -->
+            <nav>
+                <ul>
+                    <input class="nav_radio" type="radio" name="navbutton" id="RadioButton1" checked>
+                    <li><a><label onclick="window.location = '/index'" for="RadioButton1"><span>首页</span></label></a></li>
+                    <input class="nav_radio" type="radio" name="navbutton" id="RadioButton2">
+                    <li><a><label onclick="window.location = '/notice'" for="RadioButton2"><span>公告</span></label></a></li>
+                    <input class="nav_radio" type="radio" name="navbutton" id="RadioButton3">
+                    <li><a href="#"><label for="RadioButton3"><span>关于</span></label></a></li>
+                    <input class="nav_radio" type="radio" name="navbutton" id="RadioButton4">
+                    <li><a href="#"><label for="RadioButton4"><span>更多</span></label></a></li>
+                </ul>
+            </nav>
+            <!--  搜索框  -->
+
+            <form>
+                <input type="search" name="SearchBus" placeholder="帖子、板块、用户">
+    <!--				<button type="submit" name="SearchButton"></button>-->
+            </form>
+            <!--  登录 /注册 -->
+            {% if SessionFlag == True %}
+                <div class="Login">
+                    <a href="/index/personal/" id="personal" target="_blank" title="个人中心">●</a>
+                    <div id="login_info">
+                        <p id="symbol">▲</p>
+                        <p id="log_out">退出登录</p>
+                    </div>
+                </div>
+            {% else %}
+                <div class="Login"><a class="LoginOrSign" href="login-sign/">登录/注册</a></div>
+            {% endif %}
+
+        </div>
+
+    </header>
+</body>

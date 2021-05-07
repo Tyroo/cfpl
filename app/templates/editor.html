@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CFPL社区 l {{theme}}</title>
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <link href="/static/css/editor.css" type="text/css" rel="stylesheet">
+    <script src="/static/js/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="/static/js/set_tinymce-editor.js" type="text/javascript"></script>
+</head>
+<body>
+<!--头部-->
+<div id="head1">
+    <div class="logo">
+        <a class="logo_img" href="/index" title="乘风破浪社区"></a>
+    </div>
+    <a class="theme">{{theme}}</a>
+</div>
+
+<!--中部-->
+<div id="mid">
+    <!-- 路径div-->
+    <div class="path">
+        <a href="/index" class="pathindex" title="首页">首页</a>
+        <em>》</em>
+        <a href="#" class="pathindex" title="板块">板块</a>
+        <em>》</em>
+        <a href="" class="pathindex" title="板块">帖子编辑</a>
+        <em>》</em>
+    </div>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="operation">
+            <img src="/static/img/head_portrait.gif">
+                <div class="select">
+                    <select name="selectplate">
+                        <option value="">选择板块</option>
+                        <option value="话题">话题</option>
+                        <option value="活动">活动</option>
+                        <option value="校园墙">校园墙</option>
+                        <option value="比赛">比赛</option>
+                    </select>
+                    <select name="selectclass">
+                        <option value="">选择分类</option>
+                        <option value="学习">学习</option>
+                        <option value="闲聊">闲聊</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+            <div class="issuebutton">
+                <button type="button" id="cancel_issue">{{cancel_issue}}</button>
+                <button type="button" id="affirm_issue">{{affirm_issue}}</button>
+                <button type="button" id="save_draft">{{save_draft}}</button>
+            </div>
+    </div>
+    <!--富文本编辑器-->
+    <input type="search" name="Title" id="title" placeholder="请输入此帖子的标题..." value="{{title}}">
+    <div id="tinymce_main" style="word-wrap:break-word;">
+        <div id="tinymce_content"></div>
+    </div>
+    </form>
+    <!--待修改文章暂存区-->
+    {% if content %}
+        <textarea id="former_article" style="display: none;">{{content}}</textarea>
+    {% endif %}
+    <!--遮罩层 弹窗-->
+    <div id="pop_windows">
+        <div id="pop_windows_content">
+            <h2>发布状态</h2>
+            <hr style="text-align:center;border-width:2px;" >
+            <h3>✓</h3>
+            <h4>发布成功！</h4>
+            <h5>帖子正在审核中...</h5>
+            <button type="button" id="pop_windows_btn">知道了</button>
+        </div>
+    </div>
+
+</div>
+<script src="/static/js/editor.js"></script>
+</body>
+
+</html>

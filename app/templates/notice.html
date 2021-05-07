@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" charset="utf-8">
+    <link href="/static/css/notice.css" rel="stylesheet">
+  </head>
+  <body>
+	<!-- 网站头部 -->
+	<header class="header">
+		<div class="navigation">
+			<!-- LOGO -->
+			<div class="logo">
+				<a class="logo_img" href="/index" title="乘风破浪社区"></a>
+			</div>
+
+			<!-- 导航条 -->
+			<nav>
+				<ul>
+					<input class="nav_radio" type="radio" name="navbutton" id="RadioButton1">
+					<li><a><label onclick="window.location = '/index'" for="RadioButton1"><span>首页</span></label></a></li>
+					<input class="nav_radio" type="radio" name="navbutton" id="RadioButton2" checked>
+					<li><a><label onclick="window.location = '/notice'" for="RadioButton2"><span>公告</span></label></a></li>
+					<input class="nav_radio" type="radio" name="navbutton" id="RadioButton3">
+					<li><a href="#"><label for="RadioButton3"><span>关于</span></label></a></li>
+					<input class="nav_radio" type="radio" name="navbutton" id="RadioButton4">
+					<li><a href="#"><label for="RadioButton4"><span>更多</span></label></a></li>
+				</ul>
+			</nav>
+			<!--  搜索框  -->
+
+			<form>
+				<input type="search" name="SearchBus" placeholder="帖子、板块、用户">
+<!--				<button type="submit" name="SearchButton"></button>-->
+			</form>
+			<!--  登录 /注册 -->
+			{% if SessionFlag == True %}
+				<div class="Login">
+					<a href="/index/personal/" id="personal" target="_blank" title="个人中心">●</a>
+					<div id="login_info">
+						<p id="symbol">▲</p>
+						<p id="log_out">退出登录</p>
+					</div>
+				</div>
+			{% else %}
+				<div class="Login"><a class="LoginOrSign" href="/index/login-sign/">登录/注册</a></div>
+			{% endif %}
+
+		</div>
+
+	</header>
+	<main class="main">
+		<div class="notice">
+		  <div class="notice_term">
+			<h3 class="notice_title">标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+			<div class="notice_content">
+			  <p>1.修复。。。。</p>
+			  <p>2.更新。。。。</p>
+			  <p>3.增加。。。。</p>
+			</div>
+			<div class="detail">
+			  <div class="detail_link">
+				<a class="link_btn">详情链接</a>
+			  </div>
+			  <div class="detail_date">
+				<span>2021-2-13</span>
+			  </div>
+			</div>
+		  </div>
+		  <div class="notice_term">
+			<h3 class="notice_title">标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+			<div class="notice_content">
+			  <p>1.修复。。。。</p>
+			  <p>2.更新。。。。</p>
+			  <p>3.增加。。。。</p>
+			</div>
+			<div class="detail">
+			  <div class="detail_link">
+				<a class="link_btn">详情链接</a>
+			  </div>
+			  <div class="detail_date">
+				<span>2021-2-13</span>
+			  </div>
+			</div>
+		  </div>
+		  <div class="notice_term">
+			<h3 class="notice_title">标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+			<div class="notice_content">
+			  <p>1.修复。。。。</p>
+			  <p>2.更新。。。。</p>
+			  <p>3.增加。。。。</p>
+			</div>
+			<div class="detail">
+			  <div class="detail_link">
+				<a class="link_btn">详情链接</a>
+			  </div>
+			  <div class="detail_date">
+				<span>2021-2-13</span>
+			  </div>
+			</div>
+		  </div>
+		  <div class="notice_term">
+			<h3 class="notice_title">标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+			<div class="notice_content">
+			  <p>1.修复。。。。</p>
+			  <p>2.更新。。。。</p>
+			  <p>3.增加。。。。</p>
+			</div>
+			<div class="detail">
+			  <div class="detail_link">
+				<a class="link_btn">详情链接</a>
+			  </div>
+			  <div class="detail_date">
+				<span>2021-2-13</span>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</main>
+	<script type="text/javascript" src="/static/js/notice.js"></script>
+  </body>
+</html>
