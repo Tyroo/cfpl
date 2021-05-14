@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# .idea
+.idea/
+
+# certificate
+app/certificate/
